@@ -196,52 +196,36 @@
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                 console.log(prediction[0].className);
-                var resultTitle, resultExplain, krCeleb, jpCeleb, osCeleb;
+                var resultTitle, resultExplain, resultCeleb;
                 if (document.getElementById('gender').checked) {
                     switch (prediction[0].className) {
                         case 'yellowSpring':
                             resultTitle = 'イエベ春';
                             resultExplain =
                                 '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: missAスジ, IU, ロゼ(Black Pink), ナヨン(TWICE), モモ(TWICE), ウィンタ(aespa)';
-                            jpCeleb =
-                                '日本セレブ: 宮脇咲良(IZ*ONE), 本田 翼, 深田 恭子, ローラ, 橋本 環奈, 佐々 木希, 桐谷 美玲';
-                            osCeleb =
-                                '海外セレブ: スカーレット・ヨハンソン, エマ・ワトソン, テイラー・スウィフト, ビヨンセ';
+                            resultCeleb =
+                                'イエベ春 有名人: ロゼ(Black Pink), ナヨン(TWICE), モモ(TWICE), 宮脇咲良(IZ*ONE), ウィンタ(aespa), 本田 翼, 深田 恭子, ローラ, 橋本 環奈, 佐々 木希, 桐谷 美玲';
                             break;
                         case 'yellowAutumn':
                             resultTitle = 'イエベ秋';
                             resultExplain =
                                 '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: ジェニ(Black Pink), リサ(Black Pink), ツウィ(TWICE), ジゼル(aespa), クリスタル(fx)';
-                            jpCeleb =
-                                '日本セレブ: 北川 景子, 安室 奈美恵, 吉岡 百合子, 川口 春奈, 宇垣 美里, 長谷 川潤, 白石 麻衣';
-                            osCeleb =
-                                '海外セレブ: ジェシカ・アルバ, ドリュー・バリモア, ナタリー・ポートマン, ケンダル・ジェンナー';
+                            resultCeleb =
+                                'イエベ秋 有名人: ジェニ(Black Pink), リサ(Black Pink), ツウィ(TWICE), ウィンタ(aespa), クリスタルf(x), 北川 景子, 安室 奈美恵, 吉岡 百合子, 川口 春奈, 宇垣 美里, 長谷 川潤';
                             break;
                         case 'blueSummer':
                             resultTitle = 'ブルベ夏';
                             resultExplain =
                                 '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: ジス(Black Pink), サナ(TWICE), リュジン(ITZY), ヘウォン(IZ*ONE), ニンニン(aespa)';
-                            jpCeleb =
-                                '日本セレブ: 沢尻 エリカ, 綾瀬 はるか, 宮崎 あおい, 田中 みな実, 石原 さとみ, 戸田 恵梨香, 浜辺 美波';
-                            osCeleb =
-                                '海外セレブ: リアーナ, グウィネス・パルトロー, キャサリン妃, マイリー・サイラス';
+                            resultCeleb =
+                                'ブルベ夏 有名人: ジス(Black Pink), サナ(TWICE), リュジン(ITZY), ヘウォン(IZ*ONE), 沢尻 エリカ, 綾瀬 はるか, 宮崎 あおい, 田中 みな実, 石原 さとみ, 戸田 恵梨香, 浜辺 美波';
                             break;
                         case 'blueWinter':
                             resultTitle = 'ブルベ冬';
                             resultExplain =
                                 '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa)';
-                            jpCeleb =
-                                '日本セレブ: 黒木 メイサ, 剛力 彩芽, 小松 菜奈, 広瀬 すず, 土屋 太鳳, 齋藤 飛鳥, 斎藤飛鳥(乃木坂46)';
-                            osCeleb =
-                                '海外セレブ: アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
+                            resultCeleb =
+                                'ブルベ冬 有名人: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa), 黒木メイサ, 剛力彩芽, 小松菜奈, 広瀬すず, 土屋太鳳, 齋藤飛鳥';
                             break;
                     }
                 } else {
@@ -250,37 +234,29 @@
                             resultTitle = 'イエベ春';
                             resultExplain =
                                 '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
-                            jpCeleb =
-                                '日本セレブ: 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
+                            resultCeleb =
+                                'イエベ春 有名人: ロゼ(Black Pink), ナヨン(TWICE), モモ(TWICE), 宮脇咲良(IZ*ONE), ウィンタ(aespa), 本田 翼, 深田 恭子, ローラ, 橋本 環奈, 佐々 木希, 桐谷 美玲';
                             break;
                         case 'yellowAutumn':
                             resultTitle = 'イエベ秋';
                             resultExplain =
                                 '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: V(BTS), カイ(EXO), テン(NCT)';
-                            jpCeleb =
-                                '日本セレブ: 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
+                            resultCeleb =
+                                'イエベ秋 有名人: ジェニ(Black Pink), リサ(Black Pink), ツウィ(TWICE), ウィンタ(aespa), クリスタルf(x), 北川 景子, 安室 奈美恵, 吉岡 百合子, 川口 春奈, 宇垣 美里, 長谷 川潤';
                             break;
                         case 'blueSummer':
                             resultTitle = 'ブルベ夏';
                             resultExplain =
                                 '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: ジョングク(bts), JIMIN(bts), ジン(bts), ユチョン(JYJ), GDragon(BigBang)';
-                            jpCeleb =
-                                '日本セレブ: 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
+                            resultCeleb =
+                                'ブルベ夏 有名人: ジス(Black Pink), サナ(TWICE), リュジン(ITZY), ヘウォン(IZ*ONE), 沢尻 エリカ, 綾瀬 はるか, 宮崎 あおい, 田中 みな実, 石原 さとみ, 戸田 恵梨香, 浜辺 美波';
                             break;
                         case 'blueWinter':
                             resultTitle = 'ブルベ冬';
                             resultExplain =
                                 '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
-                            krCeleb =
-                                '韓国セレブ: SUGA(BTS), ユノ(東方神起), チョン・ヨンファ(CNblue), パク・ソジュン, イ・ジュンギ;
-                            jpCeleb =
-                                '日本セレブ: 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
+                            resultCeleb =
+                                'ブルベ冬 有名人: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa), 黒木メイサ, 剛力彩芽, 小松菜奈, 広瀬すず, 土屋太鳳, 齋藤飛鳥';
                             break;
                     }
                 }
@@ -295,17 +271,7 @@
                     "<div class='" +
                     prediction[0].className +
                     "-ai-celeb pt-2 pb-2'>" +
-                    krCeleb +
-                    '</div>' +
-                    "<div class='" +
-                    prediction[0].className +
-                    "-ai-celeb pt-2 pb-2'>" +
-                    jpCeleb +
-                    '</div>' +
-                    "<div class='" +
-                    prediction[0].className +
-                    "-ai-celeb pt-2 pb-2'>" +
-                    osCeleb +
+                    resultCeleb +
                     '</div>';
                 $('.result-message').html(title + explain + celeb);
                 var barWidth;
