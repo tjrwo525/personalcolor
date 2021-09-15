@@ -75,7 +75,7 @@
         <h3 class="pb-2 d-flex justify-content-center">性別</h3>
         <section class="d-flex justify-content-center">
             <p class="d-flex align-items-center pr-3">女</p>
-            <div>
+            <div class="invalid">
                 <input type="checkbox" id="gender" />
                 <label for="gender">
                     <span class="knob">
@@ -140,6 +140,7 @@
                     var reader = new FileReader();
                     reader.onload = function (e) {
                         $('.image-upload-wrap').hide();
+                        $('.invalid').attr('style', 'pointer-events: none');
                         $('#loading').show();
                         $('.file-upload-image').attr('src', e.target.result);
                         $('.file-upload-content').show();
