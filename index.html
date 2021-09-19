@@ -34,8 +34,8 @@
             content="AIによる無料パーソナルカラー診断。世界中の10万以上の有名人で学習したAIがあなたのパソなるカラーを無料で判断します。アップロードした写真は保存されません。"
         />
         <meta property="og:image" content="https://personalcolor-ai.com/img/ogImagePS.png" />
-        <link rel="shortcut icon" href="/img/AISKYLogo.jpg" type="image/x-icon" />
-        <link rel="icon" href="/img/AISKYLogo.jpg" type="image/x-icon" />
+        <link rel="shortcut icon" href="/img/LOGO.png" type="image/x-icon" />
+        <link rel="icon" href="/img/LOGO.png" type="image/x-icon" />
         
         
         <script
@@ -321,17 +321,15 @@
                     prediction[0].className +
                     "-ai-title'>" +
                     resultTitle +
-                    '</div>';
-                
+                    '</div>';                
                 var explain = "<div class='ai-explain pt-2'>" + resultExplain + '</div>';
                 
                 var celebtitle =
                     "<div class='" +
                     prediction[0].className +
                     "-ai-title'>" +
-                    resultTitle + "の芸能人" +
-                    '</div>';
-                
+                    "代表芸能人" +
+                    '</div>';                
                 var celeb =
                     "<div class='ai-celeb-explain pt-2'>" +
                     krCeleb +
@@ -342,6 +340,18 @@
                     "<div class='ai-celeb-explain pt-2'>" +
                     osCeleb +
                     '</div>';
+                
+                var clothestitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title'>" +
+                    "おすすめ衣装" +
+                    '</div>';                
+                var clothes =
+                    "<div class='ai-celeb-explain pt-2'>" +
+                    krCeleb +
+                    '</div>' +;
+                
                 $('.result-message').html(title + explain + celebtitle + celeb);
                 
                 var barWidth;
