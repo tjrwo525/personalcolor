@@ -375,3 +375,13 @@ input:checked + label > .knob > i:before {
   left: 0px;
   transform: rotate(134deg);
 }
+
+.resizeimage {
+  text-align: center;
+    
+}
+.resizeimage > img {
+max-width: 100%;
+height: auto;
+margin-bottom:20px;
+}
