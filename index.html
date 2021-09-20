@@ -56,15 +56,12 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
-                <span class="navbar-toggler-icon"></span>
+                <!-- <span class="navbar-toggler-icon"></span> -->
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"
-                            >骨格診断
-                            <span class="sr-only">(current)</span>
-                        </a>
+                        <a class="nav-link"　href="#" onClick="window.alert('11月リリース予定です。'); return false;">骨格診断</a>
                     </li>
                 </ul>
             </div>
@@ -148,6 +145,11 @@
         <footer class="footer pt-5 container d-flex justify-content-center">
             <div>
                 <p>&copy; エーアイスカイ・ジャパン AISKY・Japan 2021. All Rights Reserved.</p>
+                <ul id="moreInfo" class="list-inline d-flex justify-content-center">
+                <li class="list-inline-item">
+                    <a href="https://www.personalcolor-ai.com/privacy.html">プライバシーポリシー</a>
+                </li>
+            </ul>
             </div>
         </footer>
 
@@ -258,8 +260,10 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                             resultTitle = 'イエベ春';
                             resultExplain =
                                 '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
-                            krCeleb = '<strong>韓国</strong> : テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
-                            jpCeleb = '<strong>日本</strong> : 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
+                            krCeleb =
+                                '<strong>韓国</strong> : テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
+                            jpCeleb =
+                                '<strong>日本</strong> : 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
                             osCeleb = '';
                             color =
                                 '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
@@ -279,12 +283,12 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                             resultExplain =
                                 '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
                             krCeleb = '<strong>韓国</strong> : V(BTS), カイ(EXO), テン(NCT)';
-                            jpCeleb = '<strong>日本</strong> : 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
+                            jpCeleb =
+                                '<strong>日本</strong> : 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
                             osCeleb = '';
-                            hair =
-                            color =
+                            hair = color =
                                 '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
-                                '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
+                            '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
                             eyebrow =
                                 '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
                             eyeshadow =
@@ -300,7 +304,8 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                                 '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
                             krCeleb =
                                 '<strong>韓国</strong> : ジョングク(BTS), JIMIN(BTS), ジン(BTS), ユチョン(JYJ), GDragon(BigBang)';
-                            jpCeleb = '<strong>日本</strong> : 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
+                            jpCeleb =
+                                '<strong>日本</strong> : 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
                             osCeleb = '';
                             color =
                                 '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
@@ -321,7 +326,8 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                                 '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
                             krCeleb =
                                 '<strong>韓国</strong> : SUGA(BTS), ユノ(東方神起), チョン・ヨンファ(CNBlue), パク・ソジュン, イ・ジュンギ';
-                            jpCeleb = '<strong>日本</strong> : 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
+                            jpCeleb =
+                                '<strong>日本</strong> : 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
                             osCeleb = '';
                             osCeleb = '';
                             color =
@@ -417,7 +423,8 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                                 '<strong>韓国<strong>: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa)';
                             jpCeleb =
                                 '<strong>日本</strong> : 黒木 メイサ, 剛力 彩芽, 小松 菜奈, 広瀬 すず, 土屋 太鳳, 齋藤 飛鳥, 斎藤飛鳥(乃木坂46)';
-                            osCeleb = '<strong>海外</strong> : アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
+                            osCeleb =
+                                '<strong>海外</strong> : アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
                             color =
                                 '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
                             hair =
@@ -517,7 +524,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 
                 $('.result-title').html(title);
                 $('.result-message').html(featuretitle + celebtitle);
-                $('.result-make-message').html(colortitle + hairtitle + eyebrowtitle + eyeshadowtitle + cheektitle + liptitle);
+                $('.result-make-message').html(
+                    colortitle + hairtitle + eyebrowtitle + eyeshadowtitle + cheektitle + liptitle
+                );
 
                 var barWidth;
                 for (let i = 0; i < maxPredictions; i++) {
