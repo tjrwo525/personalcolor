@@ -36,15 +36,14 @@
         <meta property="og:image" content="https://personalcolor-ai.com/img/ogImagePS.png" />
         <link rel="shortcut icon" href="/img/LOGO.png" type="image/x-icon" />
         <link rel="icon" href="/img/LOGO.png" type="image/x-icon" />
-        
-        
+
         <script
             type="text/javascript"
             src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e64b3727e862b06"
         ></script>
         <meta name="naver-site-verification" content="5ea11915a652dd9514cab6d9c300c43b846424dc" />
     </head>
-    
+
     <body>
         <nav class="p-3 container navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="https://personalcolor-ai.com/">パーソナルカラー診断</a>
@@ -57,8 +56,18 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
-                <!-- <span class="navbar-toggler-icon"></span> -->
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"
+                            >骨格診断
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <section class="section">
             <h1 class="title"></h1>
@@ -104,9 +113,8 @@
                 <div class="drag-text">
                     <img src="img/upload.svg" class="mt-5 pt-5 upload" />
                     <h3 class="mb-5 pb-5 pt-4 upload-text">
-                        写真アップロード<br />
-                        or<br />
-                        ドラッグ＆ドロップ
+                        写真<br />
+                        アップロード
                     </h3>
                 </div>
             </div>
@@ -119,9 +127,11 @@
                     </div>
                     <p class="text-center">AI分析中。数秒かかります。</p>
                 </div>
-                <p class="result-message"></p>
+                <p class="result-title"></p>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
                 ※パーソナルカラーは、その日のコンディションによって変わることがあります。
+                <p class="result-message"></p>
+                <p class="result-make-message"></p>
                 <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
 
                 <div class="pt-3 image-title-wrap">
@@ -140,19 +150,19 @@
                 <p>&copy; エーアイスカイ・ジャパン AISKY・Japan 2021. All Rights Reserved.</p>
             </div>
         </footer>
-        
+
         <!-- function of comment -->
         <div id="disqus_thread"></div>
         <script>
             /**
              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
             /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
             (function () {
                 // DON'T EDIT BELOW THIS LINE
                 var d = document,
@@ -231,7 +241,17 @@
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                 console.log(prediction[0].className);
-                var resultTitle, resultExplain, krCeleb, jpCeleb, osCeleb;
+                var resultTitle,
+                    resultExplain,
+                    krCeleb,
+                    jpCeleb,
+                    osCeleb,
+                    hair,
+                    color,
+                    eyebrow,
+                    eyeshadow,
+                    cheek,
+                    lip;
                 if (document.getElementById('gender').checked) {
                     switch (prediction[0].className) {
                         case 'yellowSpring':
@@ -241,6 +261,18 @@
                             krCeleb = '韓国: テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
                             jpCeleb = '日本: 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
                             osCeleb = '';
+                            color =
+                                '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/yellowSpring/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/yellowSpring/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/yellowSpring/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/yellowSpring/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/yellowSpring/lip.PNG"></div>';
                             break;
                         case 'yellowAutumn':
                             resultTitle = 'イエベ秋';
@@ -249,6 +281,18 @@
                             krCeleb = '韓国: V(BTS), カイ(EXO), テン(NCT)';
                             jpCeleb = '日本: 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
                             osCeleb = '';
+                            hair =
+                            color =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
+                                '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/lip.PNG"></div>';
                             break;
                         case 'blueSummer':
                             resultTitle = 'ブルベ夏';
@@ -258,6 +302,18 @@
                                 '韓国: ジョングク(BTS), JIMIN(BTS), ジン(BTS), ユチョン(JYJ), GDragon(BigBang)';
                             jpCeleb = '日本: 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
                             osCeleb = '';
+                            color =
+                                '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/blueSummer/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/blueSummer/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/blueSummer/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/blueSummer/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/blueSummer/lip.PNG"></div>';
                             break;
                         case 'blueWinter':
                             resultTitle = 'ブルベ冬';
@@ -267,6 +323,19 @@
                                 '韓国: SUGA(BTS), ユノ(東方神起), チョン・ヨンファ(CNBlue), パク・ソジュン, イ・ジュンギ';
                             jpCeleb = '日本: 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
                             osCeleb = '';
+                            osCeleb = '';
+                            color =
+                                '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/blueWinter/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/blueWinter/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/blueWinter/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/blueWinter/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/blueWinter/lip.PNG"></div>';
                             break;
                     }
                 } else {
@@ -281,6 +350,18 @@
                                 '日本: 宮脇咲良(IZ*ONE), 本田 翼, 深田 恭子, ローラ, 橋本 環奈, 佐々 木希, 桐谷 美玲';
                             osCeleb =
                                 '海外: スカーレット・ヨハンソン, エマ・ワトソン, テイラー・スウィフト, ビヨンセ';
+                            color =
+                                '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/yellowSpring/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/yellowSpring/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/yellowSpring/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/yellowSpring/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/yellowSpring/lip.PNG"></div>';
                             break;
                         case 'yellowAutumn':
                             resultTitle = 'イエベ秋';
@@ -292,6 +373,18 @@
                                 '日本: 北川 景子, 安室 奈美恵, 吉岡 百合子, 川口 春奈, 宇垣 美里, 長谷 川潤, 白石 麻衣';
                             osCeleb =
                                 '海外: ジェシカ・アルバ, ドリュー・バリモア, ナタリー・ポートマン, ケンダル・ジェンナー';
+                            color =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/yellowAutumn/lip.PNG"></div>';
                             break;
                         case 'blueSummer':
                             resultTitle = 'ブルベ夏';
@@ -303,6 +396,18 @@
                                 '日本: 沢尻 エリカ, 綾瀬 はるか, 宮崎 あおい, 田中 みな実, 石原 さとみ, 戸田 恵梨香, 浜辺 美波';
                             osCeleb =
                                 '海外: リアーナ, グウィネス・パルトロー, キャサリン妃, マイリー・サイラス';
+                            color =
+                                '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/blueSummer/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/blueSummer/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/blueSummer/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/blueSummer/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/blueSummer/lip.PNG"></div>';
                             break;
                         case 'blueWinter':
                             resultTitle = 'ブルベ冬';
@@ -313,47 +418,107 @@
                             jpCeleb =
                                 '日本: 黒木 メイサ, 剛力 彩芽, 小松 菜奈, 広瀬 すず, 土屋 太鳳, 齋藤 飛鳥, 斎藤飛鳥(乃木坂46)';
                             osCeleb = '海外: アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
+                            color =
+                                '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
+                            hair =
+                                '<div class="resizeimage"><img src="img/blueWinter/hair.PNG"></div>';
+                            eyebrow =
+                                '<div class="resizeimage"><img src="img/blueWinter/eyebrow.PNG"></div>';
+                            eyeshadow =
+                                '<div class="resizeimage"><img src="img/blueWinter/eyeshadow.PNG"></div>';
+                            cheek =
+                                '<div class="resizeimage"><img src="img/blueWinter/cheek.PNG"></div>';
+                            lip =
+                                '<div class="resizeimage"><img src="img/blueWinter/lip.PNG"></div>';
                             break;
                     }
                 }
                 var title =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title'>" +
+                    "-ai-title result-message-title'>" +
                     resultTitle +
-                    '</div>';                
-                var explain = "<div class='ai-explain pt-2'>" + resultExplain + '</div>';
-                
+                    '</div>';
+
+                var feature = "<div class='result-explain pt-2'>" + resultExplain + '</div>';
+                var featuretitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    '特徴' +
+                    feature +
+                    '</div>';
+
+                var celeb =
+                    "<div class='result-celeb-explain pt-2'>" +
+                    krCeleb +
+                    '</div>' +
+                    "<div class='result-celeb-explain pt-2'>" +
+                    jpCeleb +
+                    '</div>' +
+                    "<div class='result-celeb-explain pt-2'>" +
+                    osCeleb +
+                    '</div>';
                 var celebtitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title'>" +
-                    "代表芸能人" +
-                    '</div>';                
-                var celeb =
-                    "<div class='ai-celeb-explain pt-2'>" +
-                    krCeleb +
-                    '</div>' +
-                    "<div class='ai-celeb-explain pt-2'>" +
-                    jpCeleb +
-                    '</div>' +
-                    "<div class='ai-celeb-explain pt-2'>" +
-                    osCeleb +
+                    "-ai-title margin-bottom-30'>" +
+                    '代表有名人' +
+                    celeb +
                     '</div>';
-                
-                // var clothestitle =
-                //     "<div class='" +
-                //     prediction[0].className +
-                //     "-ai-title'>" +
-                //     "おすすめ衣装" +
-                //     '</div>';                
-                // var clothes =
-                //     "<div class='ai-celeb-explain pt-2'>" +
-                //     krCeleb +
-                //     '</div>' +;
-                
-                $('.result-message').html(title + explain + celebtitle + celeb);
-                
+
+                var colortitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    'Color' +
+                    color +
+                    '</div>';
+
+                var hairtitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    'Hair' +
+                    hair +
+                    '</div>';
+
+                var eyebrowtitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    'Eyebrow' +
+                    eyebrow +
+                    '</div>';
+
+                var eyeshadowtitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    'Eye shadow' +
+                    eyeshadow +
+                    '</div>';
+
+                var cheektitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    'Cheek' +
+                    cheek +
+                    '</div>';
+
+                var liptitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-30'>" +
+                    'Lip' +
+                    lip +
+                    '</div>';
+
+                $('.result-title').html(title);
+                $('.result-message').html(featuretitle + celebtitle);
+                $('.result-make-message').html(colortitle + hairtitle + eyebrowtitle + eyeshadowtitle + cheektitle + liptitle);
+
                 var barWidth;
                 for (let i = 0; i < maxPredictions; i++) {
                     if (prediction[i].probability.toFixed(2) > 0.1) {
@@ -377,7 +542,7 @@
                         case 'blueWinter':
                             labelTitle = 'ブルベ冬';
                         // default:
-                        //     labelTitle = '判断不可';
+                        // labelTitle = '判断不可';
                     }
                     var label =
                         "<div class='ai-label d-flex align-items-center'>" + labelTitle + '</div>';

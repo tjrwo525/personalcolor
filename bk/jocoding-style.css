@@ -5,7 +5,7 @@ body {
     color: #35465d;
 }
 .file-upload {
-    padding: 5% 3%;
+    padding: 15% 3%;
     margin: 0 auto;
     border-radius: 10px;
     border: solid 1.5px #f6f7fa;
@@ -156,6 +156,27 @@ body {
     }
 }
 
+.youtube-link {
+    font-size: 1.5rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #f73737;
+    text-decoration: underline;
+}
+
+.youtube-link:hover {
+    font-size: 1.5rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #f73737;
+    text-decoration: underline;
+}
+
+.youtube-icon {
+    width: 30px;
+    height: 27.262px;
+}
+
 .upload {
     width: 20%;
 }
@@ -177,7 +198,41 @@ body {
 .bar-container {
     height: 2.7rem;
 }
-.blueSummer-box {
+.dinosaur-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(117, 204, 84, 0.2);
+}
+.dinosaur-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(117, 204, 84, 1);
+}
+.deer-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(117, 204, 84, 0.2);
+}
+.deer-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(117, 204, 84, 1);
+}
+.dog-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -186,7 +241,7 @@ body {
     width: 100%;
     background-color: rgba(27, 175, 234, 0.2);
 }
-.blueSummer-bar {
+.dog-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -194,7 +249,7 @@ body {
     border-radius: 10px;
     background-color: rgba(27, 175, 234, 1);
 }
-.yellowAutumn-box {
+.cat-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -203,7 +258,7 @@ body {
     width: 100%;
     background-color: rgba(251, 176, 59, 0.2);
 }
-.yellowAutumn-bar {
+.cat-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -211,7 +266,24 @@ body {
     border-radius: 10px;
     background-color: rgba(251, 176, 59, 1);
 }
-.blueWinter-box {
+.bear-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(195, 140, 102, 0.2);
+}
+.bear-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(195, 140, 102, 1);
+}
+.fox-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -220,7 +292,7 @@ body {
     width: 100%;
     background-color: rgba(49, 132, 155, 0.2);
 }
-.blueWinter-bar {
+.fox-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -228,7 +300,7 @@ body {
     border-radius: 10px;
     background-color: rgba(49, 132, 155, 1);
 }
-.yellowSpring-box {
+.rabbit-box {
     position: absolute;
     top: 0;
     left: 0;
@@ -237,7 +309,7 @@ body {
     width: 100%;
     background-color: rgba(235, 166, 190, 0.2);
 }
-.yellowSpring-bar {
+.rabbit-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -249,7 +321,7 @@ body {
     font-size: 1rem;
     color: #ffffff;
 }
-.ai-label {
+.animal-label {
     width: 20%;
     text-align: left;
     height: 2rem;
@@ -259,52 +331,58 @@ body {
     margin: 0 auto;
 }
 .result-message {
-    margin-top: 30px;
     font-size: 2rem;
-}
-.result-make-message {
-    margin-top: 30px;
-    font-size: 2rem;
-}
-.result-title {
-    font-size: 3rem;
 }
 
-.result-explain {
+.animal-explain {
     font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: #35465d;
 }
-.result-celeb-explain {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #35465d;
+.dinosaur-animal-title {
+    color: #3ba363;
 }
-.blueSummer-ai-title {
-    color: #548dd4;
-}
-.blueSummer-ai-celeb {
-    color: #548dd4;
+.dinosaur-animal-celeb {
+    color: #3ba363;
     font-size: 1.2rem;
 }
-.yellowSpring-ai-title {
-    color: #e56995;
+.deer-animal-title {
+    color: #3ba363;
 }
-.yellowSpring-ai-celeb {
-    color: #e56995;
+.deer-animal-celeb {
+    color: #3ba363;
     font-size: 1.2rem;
 }
-.yellowAutumn-ai-title {
+.cat-animal-title {
     color: #ff6c0a;
 }
-.yellowAutumn-ai-celeb {
+.cat-animal-celeb {
     color: #ff6c0a;
     font-size: 1.2rem;
 }
-.blueWinter-ai-title {
+.dog-animal-title {
+    color: #548dd4;
+}
+.dog-animal-celeb {
+    color: #548dd4;
+    font-size: 1.2rem;
+}
+.rabbit-animal-title {
+    color: #e56995;
+}
+.rabbit-animal-celeb {
+    color: #e56995;
+    font-size: 1.2rem;
+}
+.bear-animal-title {
+    color: #9b6b43;
+}
+.bear-animal-celeb {
+    color: #9b6b43;
+    font-size: 1.2rem;
+}
+.fox-animal-title {
     color: #31849b;
 }
-.blueWinter-ai-celeb {
+.fox-animal-celeb {
     color: #31849b;
     font-size: 1.2rem;
 }
@@ -392,16 +470,4 @@ input:checked + label > .knob > i:before {
 
 .ad-banner {
     max-width: 320px;
-}
-.resizeimage {
-    text-align: center;
-}
-.resizeimage > img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.margin-bottom-30 {
-    margin-bottom: 30px;
 }
