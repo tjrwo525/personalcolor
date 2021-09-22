@@ -5,7 +5,7 @@ body {
     color: #35465d;
 }
 .file-upload {
-    padding: 5% 3%;
+    padding: 3% 3%;
     margin: 0 auto;
     border-radius: 10px;
     border: solid 1.5px #f6f7fa;
@@ -478,7 +478,7 @@ input:checked + label > .knob > i:before {
 .slick-dots {
     text-align:center;
 	margin:10px 0 0 0; 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .slick-dots li {
@@ -504,6 +504,6 @@ input:checked + label > .knob > i:before {
 }
 .menu-area {
     text-align: center;
-    padding: 10px;
-    font-size: 15pt
+    padding: 5px;
+    font-size: 13pt
 }
