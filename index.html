@@ -22,8 +22,9 @@
             name="description"
             content="AIによる無料パーソナルカラー診断。世界中の10万以上の有名人で学習したAIがあなたのパソなるカラーを無料で判断します。アップロードした写真は保存されません。"
         />
-        <meta name="author" content="sky ai" />
+        <meta name="author" content="aisky" />
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/reset.css" />
 
         <link rel="canonical" href="https://personalcolor-ai.com/" />
         <meta property="og:url" content="https://personalcolor-ai.com/" />
@@ -46,6 +47,12 @@
             name="google-site-verification"
             content="CHxG7N8WdJHtIiDG4nI8Ogwp0UAcJKzPV-VNWNwfZBU"
         />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link rel="stylesheet" type="text/css" href="css/6-1-6.css" />
     </head>
 
     <body>
@@ -75,8 +82,8 @@
                 </ul>
             </div>
         </nav>
+
         <section class="section">
-            <h1 class="title"></h1>
             <h1 class="title">パーソナルカラー診断</h1>
             <div class="resizeimage">
                 <img src="img/skyaiPSModel.jpg" />
@@ -90,20 +97,10 @@
                 AIによる無料パーソナルカラー診断。世界中の10万以上の有名人で学習したAIがあなたのパソなるカラーを無料で判断します。アップロードした写真は保存されません。
             </p>
         </section>
-        <h3 class="pb-2 d-flex justify-content-center">性別</h3>
-        <section class="d-flex justify-content-center">
-            <p class="d-flex align-items-center pr-3">女</p>
-            <div class="invalid">
-                <input type="checkbox" id="gender" />
-                <label for="gender">
-                    <span class="knob">
-                        <i></i>
-                    </span>
-                </label>
-            </div>
-            <p class="d-flex align-items-center pl-3">男</p>
-        </section>
-
+        <h3 class="pt-2 d-flex justify-content-center">＜ パーソナルカラーの効果 ＞</h3>
+        <h4 class="pb-2 d-flex justify-content-center">
+            肌に透明感がアップ<br />肌つやが見えがアップ<br />しみがシワなど薄く見える<br />小顔に見える<br />
+        </h4>
         <script
             class="jsbin"
             src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
@@ -122,9 +119,55 @@
                         写真<br />
                         アップロード
                     </h3>
+                    <h4 class="mt-1 text-center">※写真は保存されません。</h4>
                 </div>
             </div>
-            <h4 class="mt-1 text-center">※写真は保存されません。</h4>
+            <div class="example-wrap">
+                <h4 class="text-center">OK</h4>
+                <ul class="slider">
+                    <li><img src="img/example-g/asiang2.PNG" alt="" /></li>
+                    <li><img src="img/example-g/asianm.PNG" alt="" /></li>
+                    <li><img src="img/example-g/asiang.jpg" alt="" /></li>
+                    <li><img src="img/example-g/asianm2.PNG" alt="" /></li>
+                    <li><img src="img/example-g/whiteg.jpg" alt="" /></li>
+                    <li><img src="img/example-g/whitem.PNG" alt="" /></li>
+                    <li><img src="img/example-g/blackg.jpg" alt="" /></li>
+                    <li><img src="img/example-g/blackm.jpg" alt="" /></li>
+                    <li><img src="img/example-g/whitechild.jpg" alt="" /></li>
+                    <li><img src="img/example-g/latinogchild.PNG" alt="" /></li>
+                </ul>
+            </div>
+            <div class="example-wrap">
+                <h4 class="text-center">NG</h4>
+                <ul class="slider">
+                    <li><img src="img/example-b/dark.jpg" alt="dark" />
+                        <div class="menu-area">
+                            <h3>暗い</h3>
+                        </div></li>
+                    <li><img src="img/example-b/mask.jpg" alt="mask" />
+                        <div class="menu-area">
+                            <h3>マスク</h3>
+                        </div></li>
+                    <li><img src="img/example-b/Twoormore.jpg" alt="Twoormore" />
+                        <div class="menu-area">
+                            <h3>団体</h3>
+                        </div></li>
+                    <li><img src="img/example-b/makeup.jpg" alt="makeup" />
+                        <div class="menu-area">
+                            <h3>メイクアップ</h3>
+                        </div></li>
+                    <li><img src="img/example-b/Sideways.jpg" alt="Sideways" />
+                        <div class="menu-area">
+                            <h3>横向き</h3>
+                        </div></li>
+                    <li>
+                        <img src="img/example-b/closeeyes.jpg" alt="Sideways" />
+                        <div class="menu-area">
+                            <h3>目を閉じる</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="face-image" src="#" alt="your image" />
                 <div id="loading" class="animated bounce">
@@ -151,21 +194,23 @@
                 </div>
             </div>
         </div>
-        <footer class="footer pt-5 container d-flex justify-content-center">
-            <div>
-                <p>&copy; エーアイスカイ・ジャパン AISKY・Japan 2021. All Rights Reserved.</p>
-                <ul id="moreInfo" class="list-inline d-flex justify-content-center">
-                    <li class="list-inline-item">
-                        <a href="https://www.personalcolor-ai.com/privacy.html"
-                            >プライバシーポリシー</a
-                        >
-                    </li>
-                </ul>
-            </div>
-        </footer>
-
         <!-- function of comment -->
         <div id="disqus_thread"></div>
+        <footer class="footer pt-5 container d-flex justify-content-center">
+            <div>
+                <p class="d-flex justify-content-center">
+                    <a href="https://www.personalcolor-ai.com/privacy.html">Privacy Policy</a>
+                </p>
+                <p class="d-flex justify-content-center">
+                    Development reference from
+                    <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">JoCoding </a
+                    ><a href="https://github.com/googlecreativelab/teachablemachine-community"
+                        >Teachable Machine<br />
+                    </a>
+                </p>
+                <p>&copy; エーアイスカイ・ジャパン AISKY・Japan 2021. All Rights Reserved.</p>
+            </div>
+        </footer>
         <script>
             /**
              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -196,6 +241,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     var reader = new FileReader();
                     reader.onload = function (e) {
                         $('.image-upload-wrap').hide();
+                        $('.example-wrap').hide();
                         $('.invalid').attr('style', 'pointer-events: none');
                         $('#loading').show();
                         $('.file-upload-image').attr('src', e.target.result);
@@ -229,17 +275,17 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
         <script type="text/javascript">
             let URL;
-            const urlMale = 'https://teachablemachine.withgoogle.com/models/pIgrtC24Q/';
-            const urlFemale = 'https://teachablemachine.withgoogle.com/models/r4jx2dNtm/';
-            let model, webcam, labelContainer, maxPredictions;
+            const mwurl = 'https://teachablemachine.withgoogle.com/models/BqrzrvL-F/';
+            const psurl = 'https://teachablemachine.withgoogle.com/models/oaFL8bVon/';
+            let model, labelContainer, maxPredictions;
             async function init() {
-                if (document.getElementById('gender').checked) {
-                    URL = urlMale;
-                } else {
-                    URL = urlFemale;
-                }
-                const modelURL = URL + 'model.json';
-                const metadataURL = URL + 'metadata.json';
+                const mwmodelURL = mwurl + 'model.json';
+                const mwmetadataURL = mwurl + 'metadata.json';
+                mwmodel = await tmImage.load(mwmodelURL, mwmetadataURL);
+                mwmaxPredictions = mwmodel.getTotalClasses();
+
+                const modelURL = psurl + 'model.json';
+                const metadataURL = psurl + 'metadata.json';
                 model = await tmImage.load(modelURL, metadataURL);
                 maxPredictions = model.getTotalClasses();
                 labelContainer = document.getElementById('label-container');
@@ -251,6 +297,8 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
             }
             async function predict() {
                 var image = document.getElementById('face-image');
+                const mwprediction = await mwmodel.predict(image, false);
+                mwprediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                 console.log(prediction[0].className);
@@ -265,192 +313,129 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     eyeshadow,
                     cheek,
                     lip;
-                if (document.getElementById('gender').checked) {
-                    switch (prediction[0].className) {
-                        case 'yellowSpring':
-                            resultTitle = 'イエベ春';
-                            resultExplain =
-                                '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
+                switch (prediction[0].className) {
+                    case 'yellowSpring':
+                        resultTitle = 'イエベ春';
+                        resultExplain =
+                            '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
+                        if (mwprediction[0].className == 'men') {
                             krCeleb =
                                 '<strong>韓国</strong> : テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
                             jpCeleb =
                                 '<strong>日本</strong> : 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
                             osCeleb = '';
-                            color =
-                                '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/yellowSpring/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/yellowSpring/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/yellowSpring/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/yellowSpring/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/yellowSpring/lip.PNG"></div>';
-                            break;
-                        case 'yellowAutumn':
-                            resultTitle = 'イエベ秋';
-                            resultExplain =
-                                '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
-                            krCeleb = '<strong>韓国</strong> : V(BTS), カイ(EXO), テン(NCT)';
-                            jpCeleb =
-                                '<strong>日本</strong> : 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
-                            osCeleb = '';
-                            color =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/lip.PNG"></div>';
-                            break;
-                        case 'blueSummer':
-                            resultTitle = 'ブルベ夏';
-                            resultExplain =
-                                '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
-                            krCeleb =
-                                '<strong>韓国</strong> : ジョングク(BTS), JIMIN(BTS), ジン(BTS), ユチョン(JYJ), GDragon(BigBang)';
-                            jpCeleb =
-                                '<strong>日本</strong> : 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
-                            osCeleb = '';
-                            color =
-                                '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/blueSummer/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/blueSummer/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/blueSummer/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/blueSummer/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/blueSummer/lip.PNG"></div>';
-                            break;
-                        case 'blueWinter':
-                            resultTitle = 'ブルベ冬';
-                            resultExplain =
-                                '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
-                            krCeleb =
-                                '<strong>韓国</strong> : SUGA(BTS), ユノ(東方神起), チョン・ヨンファ(CNBlue), パク・ソジュン, イ・ジュンギ';
-                            jpCeleb =
-                                '<strong>日本</strong> : 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
-                            osCeleb = '';
-                            osCeleb = '';
-                            color =
-                                '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/blueWinter/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/blueWinter/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/blueWinter/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/blueWinter/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/blueWinter/lip.PNG"></div>';
-                            break;
-                    }
-                } else {
-                    switch (prediction[0].className) {
-                        case 'yellowSpring':
-                            resultTitle = 'イエベ春';
-                            resultExplain =
-                                '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
+                        } else {
                             krCeleb =
                                 '<strong>韓国</strong> : MissAスジ, IU, ロゼ(BLACKPINK), ナヨン(TWICE), モモ(TWICE), ウィンタ(aespa)';
                             jpCeleb =
                                 '<strong>日本</strong> : 宮脇咲良(IZ*ONE), 本田 翼, 深田 恭子, ローラ, 橋本 環奈, 佐々 木希, 桐谷 美玲';
                             osCeleb =
                                 '<strong>海外</strong> : スカーレット・ヨハンソン, エマ・ワトソン, テイラー・スウィフト, ビヨンセ';
-                            color =
-                                '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/yellowSpring/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/yellowSpring/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/yellowSpring/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/yellowSpring/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/yellowSpring/lip.PNG"></div>';
-                            break;
-                        case 'yellowAutumn':
-                            resultTitle = 'イエベ秋';
-                            resultExplain =
-                                '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
+                        }
+                        krCeleb =
+                            '<strong>韓国</strong> : テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
+                        jpCeleb =
+                            '<strong>日本</strong> : 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
+                        osCeleb = '';
+                        color =
+                            '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
+                        hair =
+                            '<div class="resizeimage"><img src="img/yellowSpring/hair.PNG"></div>';
+                        eyebrow =
+                            '<div class="resizeimage"><img src="img/yellowSpring/eyebrow.PNG"></div>';
+                        eyeshadow =
+                            '<div class="resizeimage"><img src="img/yellowSpring/eyeshadow.PNG"></div>';
+                        cheek =
+                            '<div class="resizeimage"><img src="img/yellowSpring/cheek.PNG"></div>';
+                        lip = '<div class="resizeimage"><img src="img/yellowSpring/lip.PNG"></div>';
+                        break;
+                    case 'yellowAutumn':
+                        resultTitle = 'イエベ秋';
+                        resultExplain =
+                            '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
+                        if (mwprediction[0].className == 'men') {
+                            krCeleb = '<strong>韓国</strong> : V(BTS), カイ(EXO), テン(NCT)';
+                            jpCeleb =
+                                '<strong>日本</strong> : 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
+                            osCeleb = '';
+                        } else {
                             krCeleb =
                                 '<strong>韓国</strong> : ジェニ(BLACKPINK), リサ(BLACKPINK), ツウィ(TWICE), ジゼル(aespa), クリスタル(fx)';
                             jpCeleb =
                                 '<strong>日本</strong> : 北川 景子, 安室 奈美恵, 吉岡 百合子, 川口 春奈, 宇垣 美里, 長谷 川潤, 白石 麻衣';
                             osCeleb =
                                 '<strong>海外</strong> : ジェシカ・アルバ, ドリュー・バリモア, ナタリー・ポートマン, ケンダル・ジェンナー';
-                            color =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/yellowAutumn/lip.PNG"></div>';
-                            break;
-                        case 'blueSummer':
-                            resultTitle = 'ブルベ夏';
-                            resultExplain =
-                                '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
+                        }
+                        color =
+                            '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
+                        hair =
+                            '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
+                        eyebrow =
+                            '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
+                        eyeshadow =
+                            '<div class="resizeimage"><img src="img/yellowAutumn/eyeshadow.PNG"></div>';
+                        cheek =
+                            '<div class="resizeimage"><img src="img/yellowAutumn/cheek.PNG"></div>';
+                        lip = '<div class="resizeimage"><img src="img/yellowAutumn/lip.PNG"></div>';
+                        break;
+                    case 'blueSummer':
+                        resultTitle = 'ブルベ夏';
+                        resultExplain =
+                            '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
+                        if (mwprediction[0].className == 'men') {
+                            krCeleb =
+                                '<strong>韓国</strong> : ジョングク(BTS), JIMIN(BTS), ジン(BTS), ユチョン(JYJ), GDragon(BigBang)';
+                            jpCeleb =
+                                '<strong>日本</strong> : 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
+                            osCeleb = '';
+                        } else {
                             krCeleb =
                                 '<strong>韓国</strong> : ジス(BLACKPINK), サナ(TWICE), リュジン(ITZY), ヘウォン(IZ*ONE), ニンニン(aespa)';
                             jpCeleb =
                                 '<strong>日本</strong> : 沢尻 エリカ, 綾瀬 はるか, 宮崎 あおい, 田中 みな実, 石原 さとみ, 戸田 恵梨香, 浜辺 美波';
                             osCeleb =
                                 '<strong>海外</strong> : リアーナ, グウィネス・パルトロー, キャサリン妃, マイリー・サイラス';
-                            color =
-                                '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/blueSummer/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/blueSummer/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/blueSummer/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/blueSummer/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/blueSummer/lip.PNG"></div>';
-                            break;
-                        case 'blueWinter':
-                            resultTitle = 'ブルベ冬';
-                            resultExplain =
-                                '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
+                        }
+                        color =
+                            '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
+                        hair = '<div class="resizeimage"><img src="img/blueSummer/hair.PNG"></div>';
+                        eyebrow =
+                            '<div class="resizeimage"><img src="img/blueSummer/eyebrow.PNG"></div>';
+                        eyeshadow =
+                            '<div class="resizeimage"><img src="img/blueSummer/eyeshadow.PNG"></div>';
+                        cheek =
+                            '<div class="resizeimage"><img src="img/blueSummer/cheek.PNG"></div>';
+                        lip = '<div class="resizeimage"><img src="img/blueSummer/lip.PNG"></div>';
+                        break;
+                    case 'blueWinter':
+                        resultTitle = 'ブルベ冬';
+                        resultExplain =
+                            '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
+                        if (mwprediction[0].className == 'men') {
                             krCeleb =
-                                '<strong>韓国<strong>: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa)';
+                                '<strong>韓国</strong> : SUGA(BTS), ユノ(東方神起), チョン・ヨンファ(CNBlue), パク・ソジュン, イ・ジュンギ';
+                            jpCeleb =
+                                '<strong>日本</strong> : 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
+                            osCeleb = '';
+                        } else {
+                            krCeleb =
+                                '<strong>韓国</strong>: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa)';
                             jpCeleb =
                                 '<strong>日本</strong> : 黒木 メイサ, 剛力 彩芽, 小松 菜奈, 広瀬 すず, 土屋 太鳳, 齋藤 飛鳥, 斎藤飛鳥(乃木坂46)';
                             osCeleb =
                                 '<strong>海外</strong> : アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
-                            color =
-                                '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
-                            hair =
-                                '<div class="resizeimage"><img src="img/blueWinter/hair.PNG"></div>';
-                            eyebrow =
-                                '<div class="resizeimage"><img src="img/blueWinter/eyebrow.PNG"></div>';
-                            eyeshadow =
-                                '<div class="resizeimage"><img src="img/blueWinter/eyeshadow.PNG"></div>';
-                            cheek =
-                                '<div class="resizeimage"><img src="img/blueWinter/cheek.PNG"></div>';
-                            lip =
-                                '<div class="resizeimage"><img src="img/blueWinter/lip.PNG"></div>';
-                            break;
-                    }
+                        }
+                        color =
+                            '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
+                        hair = '<div class="resizeimage"><img src="img/blueWinter/hair.PNG"></div>';
+                        eyebrow =
+                            '<div class="resizeimage"><img src="img/blueWinter/eyebrow.PNG"></div>';
+                        eyeshadow =
+                            '<div class="resizeimage"><img src="img/blueWinter/eyeshadow.PNG"></div>';
+                        cheek =
+                            '<div class="resizeimage"><img src="img/blueWinter/cheek.PNG"></div>';
+                        lip = '<div class="resizeimage"><img src="img/blueWinter/lip.PNG"></div>';
+                        break;
                 }
                 var title =
                     "<div class='" +
@@ -489,7 +474,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var colortitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title margin-bottom-30'>" +
+                    "-ai-title margin-bottom-20'>" +
                     'Color' +
                     color +
                     '</div>';
@@ -497,7 +482,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var hairtitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title margin-bottom-30'>" +
+                    "-ai-title margin-bottom-20'>" +
                     'Hair' +
                     hair +
                     '</div>';
@@ -505,7 +490,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var eyebrowtitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title margin-bottom-30'>" +
+                    "-ai-title margin-bottom-20'>" +
                     'Eyebrow' +
                     eyebrow +
                     '</div>';
@@ -513,7 +498,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var eyeshadowtitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title margin-bottom-30'>" +
+                    "-ai-title margin-bottom-20'>" +
                     'Eye shadow' +
                     eyeshadow +
                     '</div>';
@@ -521,7 +506,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var cheektitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title margin-bottom-30'>" +
+                    "-ai-title margin-bottom-20'>" +
                     'Cheek' +
                     cheek +
                     '</div>';
@@ -529,7 +514,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 var liptitle =
                     "<div class='" +
                     prediction[0].className +
-                    "-ai-title margin-bottom-30'>" +
+                    "-ai-title margin-bottom-20'>" +
                     'Lip' +
                     lip +
                     '</div>';
@@ -598,6 +583,15 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 document.getElementById('yotube-bottom-link').style.display = 'none';
             }
         </script>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <!--自作のJS-->
+        <script src="js/6-1-6.js"></script>
     </body>
     <!-- 
 image input box

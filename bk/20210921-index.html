@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <title>パーソナルカラーAI診断</title>
+        <meta name="title" content="パーソナルカラーAI診断" />
+        <meta name="subject" content="AIによるパーソナルカラー診断, 私のカラーを確認しましょう!" />
+        <meta
+            name="keywords"
+            content="パーソナルカラーAI診断, AIによるパーソナルカラー診断, パーソナルカラー診断, 人工知能によるパーソナルカラー診断, 顔で分かるパーソナルカラー, パーソナルカラー, 顔色, personalcolor, イエベ春, イエベ秋, ブルベ夏, ブルベ冬, イエベー春, イエベー秋, ブルベー夏, ブルベー冬, 사슴상, AI　パーソナルカラー, 人工知能　パーソナルカラー"
+        />
+        <meta
+            name="description"
+            content="AIによる無料パーソナルカラー診断。世界中の10万以上の有名人で学習したAIがあなたのパソなるカラーを無料で判断します。アップロードした写真は保存されません。"
+        />
+        <meta name="author" content="sky ai" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="canonical" href="https://personalcolor-ai.com/" />
+        <meta property="og:url" content="https://personalcolor-ai.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="パーソナルカラーAI診断" />
+        <meta
+            property="og:description"
+            content="AIによる無料パーソナルカラー診断。世界中の10万以上の有名人で学習したAIがあなたのパソなるカラーを無料で判断します。アップロードした写真は保存されません。"
+        />
+        <meta property="og:image" content="https://personalcolor-ai.com/img/ogImagePS.png" />
+        <link rel="shortcut icon" href="/img/sky.png" type="image/x-icon" />
+        <link rel="icon" href="/img/sky.png" type="image/x-icon" />
+        <script
+            type="text/javascript"
+            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e64b3727e862b06"
+        ></script>
+        <meta name="naver-site-verification" content="5ea11915a652dd9514cab6d9c300c43b846424dc" />
+    </head>
+
+    <body>
+        <nav class="p-3 container navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="https://personalcolor-ai.com/">パーソナルカラーAI診断</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <section class="section">
+            <h1 class="title">人工知能</h1>
+            <h2 class="subtitle">無料パーソナルカラー診断</h2>
+            <h2 class="sr-only">自分のパーソナルカラーを無料で診断できます。</h2>
+            <h3 class="sr-only">
+                韓流スターやKPOPアイドル、国内有名のデータで学習したAIがあなたのパソなるカラーを判断します。
+            </h3>
+            <h4 class="sr-only">本サービスはGoogleのAI teachable machine 2.0を使用しています。</h4>
+            <p class="sr-only">
+                AIによる無料パーソナルカラー診断。世界中の10万以上の有名人で学習したAIがあなたのパソなるカラーを無料で判断します。アップロードした写真は保存されません。
+            </p>
+        </section>
+        <h3 class="pb-2 d-flex justify-content-center">性別</h3>
+        <section class="d-flex justify-content-center">
+            <p class="d-flex align-items-center pr-3">女</p>
+            <div class="invalid">
+                <input type="checkbox" id="gender" />
+                <label for="gender">
+                    <span class="knob">
+                        <i></i>
+                    </span>
+                </label>
+            </div>
+            <p class="d-flex align-items-center pl-3">男</p>
+        </section>
+        <table border="1" cellspacing="0" cellpadding="1">
+            <tr>
+            <td><img src="img/G_exmaple1.PNG"></td>
+            <td><img src="img/G_exmaple2.jpg"></td>
+            <td><IMG src="img/G_exmaple3.jpg"></td>
+            </tr>
+        </table>
+        <script
+            class="jsbin"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+        ></script>
+        <div class="mt-3 container file-upload">
+            <div class="image-upload-wrap">
+                <input
+                    class="file-upload-input"
+                    type="file"
+                    onchange="readURL(this);"
+                    accept="image/*"
+                />
+                <div class="drag-text">
+                    <img src="img/upload.svg" class="mt-5 pt-5 upload" />
+                    <h3 class="mb-5 pb-5 pt-4 upload-text">
+                        写真アップロード<br />
+                        or<br />
+                        ドラッグ＆ドロップ
+                    </h3>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                <div id="loading" class="animated bounce">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p class="text-center">AI分析中。数秒かかります。</p>
+                </div>
+                <p class="result-message"></p>
+                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+                <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+
+                <div class="pt-3 image-title-wrap">
+                    <button
+                        type="button p-2"
+                        class="try-again-btn"
+                        onclick="window.location.reload();"
+                    >
+                        <span class="try-again-text">もう一回</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <footer class="footer pt-5 container d-flex justify-content-center">
+            <div>
+                <p>&copy; スカイエーアイ SkyAI 2021. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+                        $('.invalid').attr('style', 'pointer-events: none');
+                        $('#loading').show();
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+                        $('.image-title').html(input.files[0].name);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                    init().then(function () {
+                        console.log('hello');
+                        predict();
+                        $('#loading').hide();
+                    });
+                } else {
+                    removeUpload();
+                }
+            }
+
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script type="text/javascript">
+            let URL;
+            const urlMale = 'https://teachablemachine.withgoogle.com/models/pIgrtC24Q/';
+            const urlFemale = 'https://teachablemachine.withgoogle.com/models/r4jx2dNtm/';
+            let model, webcam, labelContainer, maxPredictions;
+            async function init() {
+                if (document.getElementById('gender').checked) {
+                    URL = urlMale;
+                } else {
+                    URL = urlFemale;
+                }
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions; i++) {
+                    var element = document.createElement('div');
+                    element.classList.add('d-flex');
+                    labelContainer.appendChild(element);
+                }
+            }
+            async function predict() {
+                var image = document.getElementById('face-image');
+                const prediction = await model.predict(image, false);
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                console.log(prediction[0].className);
+                var resultTitle, resultExplain, krCeleb, jpCeleb, osCeleb;
+                if (document.getElementById('gender').checked) {
+                    switch (prediction[0].className) {
+                        case 'yellowSpring':
+                            resultTitle = 'イエベ春';
+                            resultExplain =
+                                '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
+                            krCeleb = '韓国: テミン(SHINY), イ・ホンギ(FTIsland), ウヨン(2pm)';
+                            jpCeleb = '日本: 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
+                            osCeleb = '';
+                            break;
+                        case 'yellowAutumn':
+                            resultTitle = 'イエベ秋';
+                            resultExplain =
+                                '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
+                            krCeleb = '韓国: V(BTS), カイ(EXO), テン(NCT)';
+                            jpCeleb = '日本: 三浦 翔平, 北村 匠海, 吉沢 亮, 竹内 涼真, 木村 拓哉,';
+                            osCeleb = '';
+                            break;
+                        case 'blueSummer':
+                            resultTitle = 'ブルベ夏';
+                            resultExplain =
+                                '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
+                            krCeleb =
+                                '韓国: ジョングク(BTS), JIMIN(BTS), ジン(BTS), ユチョン(JYJ), GDragon(BigBang)';
+                            jpCeleb = '日本: 綾野 剛, 玉森 裕太, 向井 理, 福山 雅治';
+                            osCeleb = '';
+                            break;
+                        case 'blueWinter':
+                            resultTitle = 'ブルベ冬';
+                            resultExplain =
+                                '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
+                            krCeleb =
+                                '韓国: SUGA(BTS), ユノ(東方神起), チョン・ヨンファ(CNBlue), パク・ソジュン, イ・ジュンギ';
+                            jpCeleb = '日本: 山崎 賢人, 山田 涼介, 菅田 将暉, 松本 潤';
+                            osCeleb = '';
+                            break;
+                    }
+                } else {
+                    switch (prediction[0].className) {
+                        case 'yellowSpring':
+                            resultTitle = 'イエベ春';
+                            resultExplain =
+                                '春のお花畑や新緑を思わせる、明るく華やかな色味が似合うタイプ。活発で可愛らしい印象の方が多く、若々しい雰囲気を持っています。瞳の色や髪の色がやわらかなブラウン、肌色は健康的なアイボリー系の方が多いのが特徴です。';
+                            krCeleb =
+                                '韓国: MissAスジ, IU, ロゼ(BLACKPINK), ナヨン(TWICE), モモ(TWICE), ウィンタ(aespa)';
+                            jpCeleb =
+                                '日本: 宮脇咲良(IZ*ONE), 本田 翼, 深田 恭子, ローラ, 橋本 環奈, 佐々 木希, 桐谷 美玲';
+                            osCeleb =
+                                '海外: スカーレット・ヨハンソン, エマ・ワトソン, テイラー・スウィフト, ビヨンセ';
+                            break;
+                        case 'yellowAutumn':
+                            resultTitle = 'イエベ秋';
+                            resultExplain =
+                                '熟した果実や紅葉のように、温かみのあるディープなカラーが似合うタイプ。落ち着いたイメージやナチュラルな印象を持っている人が多いです。髪色や瞳の色は穏やかなダークブラウン、肌色は標準的なオークル系で日に焼けると吸収して黒くなりやすい人が多いのが特徴です。';
+                            krCeleb =
+                                '韓国: ジェニ(BLACKPINK), リサ(BLACKPINK), ツウィ(TWICE), ジゼル(aespa), クリスタル(fx)';
+                            jpCeleb =
+                                '日本: 北川 景子, 安室 奈美恵, 吉岡 百合子, 川口 春奈, 宇垣 美里, 長谷 川潤, 白石 麻衣';
+                            osCeleb =
+                                '海外: ジェシカ・アルバ, ドリュー・バリモア, ナタリー・ポートマン, ケンダル・ジェンナー';
+                            break;
+                        case 'blueSummer':
+                            resultTitle = 'ブルベ夏';
+                            resultExplain =
+                                '初夏に咲く紫陽花や朝顔のように淡くソフトな色味のタイプ。上品で優しげな雰囲気を持ち合わせています。髪の色や瞳の色はやや赤みがかったブラウン・もしくはソフトなブラックで、肌色はほんのりピンク味を感じる人が多いのが特徴です。';
+                            krCeleb =
+                                '韓国: ジス(BLACKPINK), サナ(TWICE), リュジン(ITZY), ヘウォン(IZ*ONE), ニンニン(aespa)';
+                            jpCeleb =
+                                '日本: 沢尻 エリカ, 綾瀬 はるか, 宮崎 あおい, 田中 みな実, 石原 さとみ, 戸田 恵梨香, 浜辺 美波';
+                            osCeleb =
+                                '海外: リアーナ, グウィネス・パルトロー, キャサリン妃, マイリー・サイラス';
+                            break;
+                        case 'blueWinter':
+                            resultTitle = 'ブルベ冬';
+                            resultExplain =
+                                '鮮やかでクリアな原色系の色やモノトーンがよく似合うタイプ。個性的だったり洗練された雰囲気を持ち、第一印象にも残りやすい人が多いです。コシがあって艶やかな黒髪、瞳の色は深く白目と黒目のコントラストがくっきりとしているのが特徴です。';
+                            krCeleb =
+                                '韓国: ミナ(TWICE), チェヨン(TWICE), イェジ(ITZY), ユナ(ITZY), アイリーン(RedVelvet), カリナ(aespa)';
+                            jpCeleb =
+                                '日本: 黒木 メイサ, 剛力 彩芽, 小松 菜奈, 広瀬 すず, 土屋 太鳳, 齋藤 飛鳥, 斎藤飛鳥(乃木坂46)';
+                            osCeleb = '海外: アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
+                            break;
+                    }
+                }
+                var title =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title'>" +
+                    resultTitle +
+                    '</div>';
+                var explain = "<div class='ai-explain pt-2'>" + resultExplain + '</div>';
+                var celeb =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-celeb pt-2 pb-2'>" +
+                    krCeleb +
+                    '</div>' +
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-celeb pt-2 pb-2'>" +
+                    jpCeleb +
+                    '</div>' +
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-celeb pt-2 pb-2'>" +
+                    osCeleb +
+                    '</div>';
+                $('.result-message').html(title + explain + celeb);
+                var barWidth;
+                for (let i = 0; i < maxPredictions; i++) {
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case 'yellowSpring':
+                            labelTitle = 'イエベ春';
+                            break;
+                        case 'yellowAutumn':
+                            labelTitle = 'イエベ秋';
+                            break;
+                        case 'blueSummer':
+                            labelTitle = 'ブルベ夏';
+                            break;
+                        case 'blueWinter':
+                            labelTitle = 'ブルベ冬';
+                        // default:
+                        //     labelTitle = '判断不可';
+                    }
+                    var label =
+                        "<div class='ai-label d-flex align-items-center'>" + labelTitle + '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
+                }
+            }
+        </script>
+        <script>
+            function iosApp() {
+                document.getElementById('coupang').style.display = 'none';
+                $('#coupang ins').hide();
+                document.getElementById('addThis').style.display = 'none';
+                document.getElementById('disqus_thread').style.display = 'none';
+                var kakao = document.getElementsByClassName('kakao_ad_area');
+                for (var i = 0; i < kakao.length; i++) {
+                    if (kakao[i]) {
+                        kakao[i].style.display = 'none';
+                    }
+                }
+                document.getElementById('yotube-top-link').style.display = 'none';
+                document.getElementById('yotube-mid-link').style.display = 'none';
+                document.getElementById('yotube-bottom-link').style.display = 'none';
+            }
+        </script>
+    </body>
+    <!-- 
+image input box
+Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+gender toggle
+Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+</html>
