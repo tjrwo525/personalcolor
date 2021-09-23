@@ -141,12 +141,18 @@ body {
     text-align: center;
     color: #EB5757;
     font-size: 2.7rem;
+    font-weight   : bold;  
 }
 
 .subtitle {
     line-height: 1.53;
     text-align: center;
+    color: #ff6347;
+}
+
+.detailcontent {
     color: #35465d;
+    font-size: 1.5rem;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
@@ -500,6 +506,7 @@ input:checked + label > .knob > i:before {
     display:block;
     border-radius:50%;
     background:#ccc;/*ドットボタンの色*/
+    border-style: none;
 }
 
 .slick-dots .slick-active button{
@@ -510,5 +517,5 @@ input:checked + label > .knob > i:before {
 }
 .menu-area {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
