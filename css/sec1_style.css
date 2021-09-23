@@ -1,8 +1,9 @@
 body {
-    font-family: 'Jua', sans-serif;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    color: #35465d;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
 }
 .file-upload {
     padding: 3% 3%;
@@ -10,6 +11,7 @@ body {
     border-radius: 10px;
     border: solid 1.5px #f6f7fa;
     background-color: #f6f7fa;
+	opacity: 0.8;
 }
 .file-upload-btn {
     width: 100%;
@@ -65,7 +67,6 @@ body {
     border-radius: 10px;
     border: dashed 1.5px #35465d;
     background-color: #ffffff;
-    margin-bottom: 20px;
 }
 
 .image-dropping,
@@ -136,10 +137,10 @@ body {
 }
 
 .title {
-    line-height: 1.67;
+    line-height: 1.0;
     text-align: center;
-    color: #35465d;
-    font-size:1.4rem;
+    color: #EB5757;
+    font-size: 2.7rem;
 }
 
 .subtitle {
@@ -443,6 +444,10 @@ input:checked + label > .knob > i:before {
     height:auto;
 }
 
+.slider ul{
+    padding-inline-start: 0px;
+}
+
 /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
 
 .slider .slick-slide {
@@ -478,8 +483,7 @@ input:checked + label > .knob > i:before {
 
 .slick-dots {
     text-align:center;
-	margin:10px 0 0 0; 
-    margin-bottom: 10px;
+	margin:5px 0 0 0; 
 }
 
 .slick-dots li {
@@ -488,6 +492,7 @@ input:checked + label > .knob > i:before {
 }
 
 .slick-dots button {
+    padding:0;
     color: transparent;
     outline: none;
     width:8px;/*ドットボタンのサイズ*/
@@ -505,6 +510,5 @@ input:checked + label > .knob > i:before {
 }
 .menu-area {
     text-align: center;
-    padding: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
