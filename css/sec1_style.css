@@ -513,7 +513,8 @@ input:checked + label > .knob > i:before {
     background:#e2a2b1;/*ドットボタンの現在地表示の色*/
 }
 .example-wrap {
-    font-size: 20pt
+    font-size: 20pt;
+    padding-top: 15px;
 }
 .menu-area {
     text-align: center;
