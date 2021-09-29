@@ -1,5 +1,5 @@
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
@@ -11,7 +11,7 @@ body {
     border-radius: 10px;
     border: solid 1.5px #f6f7fa;
     background-color: #f6f7fa;
-	opacity: 0.8;
+    opacity: 0.8;
 }
 .file-upload-btn {
     width: 100%;
@@ -137,11 +137,11 @@ body {
 }
 
 .title {
-    line-height: 1.0;
+    line-height: 1;
     text-align: center;
-    color: #EB5757;
+    color: #eb5757;
     font-size: 2.7rem;
-    font-weight   : bold;  
+    font-weight: bold;
 }
 
 .subtitle {
@@ -152,7 +152,7 @@ body {
 
 .detailcontent {
     color: #35465d;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
@@ -288,7 +288,6 @@ body {
 }
 .result-celeb-explain {
     font-size: 1.5rem;
-    margin-bottom: 10px;
     color: #35465d;
 }
 .blueSummer-ai-title {
@@ -410,7 +409,6 @@ input:checked + label > .knob > i:before {
 .resizeimage > img {
     max-width: 90%;
     height: auto;
-    margin-bottom: 20px;
 }
 
 .margin-bottom-20 {
@@ -421,7 +419,7 @@ input:checked + label > .knob > i:before {
     margin-bottom: 20px;
 }
 .example {
-    width:25%;
+    width: 25%;
 }
 
 .reference {
@@ -440,47 +438,50 @@ input:checked + label > .knob > i:before {
 /*==================================================
 スライダーのためのcss
 ===================================*/
-.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
-   width:94%;
-    margin:0 auto;
+.slider {
+    /*横幅94%で左右に余白を持たせて中央寄せ*/
+    width: 94%;
+    margin: 0 auto;
 }
 
 .slider img {
-    width:100%;/*スライダー内の画像を横幅100%に*/
-    height:auto;
+    width: 100%; /*スライダー内の画像を横幅100%に*/
+    height: auto;
 }
 
-.slider ul{
+.slider ul {
     padding-inline-start: 0px;
 }
 
 /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
 
 .slider .slick-slide {
-    margin:0 10px;   
+    margin: 0 10px;
 }
 
 /*矢印の設定*/
 
 /*戻る、次へ矢印の位置*/
-.slick-prev, 
+.slick-prev,
 .slick-next {
-    position: absolute;/*絶対配置にする*/
+    position: absolute; /*絶対配置にする*/
     top: 42%;
-    cursor: pointer;/*マウスカーソルを指マークに*/
-    outline: none;/*クリックをしたら出てくる枠線を消す*/
-    border-top: 2px solid #666;/*矢印の色*/
-    border-right: 2px solid #666;/*矢印の色*/
+    cursor: pointer; /*マウスカーソルを指マークに*/
+    outline: none; /*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666; /*矢印の色*/
+    border-right: 2px solid #666; /*矢印の色*/
     height: 15px;
     width: 15px;
 }
 
-.slick-prev {/*戻る矢印の位置と形状*/
+.slick-prev {
+    /*戻る矢印の位置と形状*/
     left: -1.5%;
     transform: rotate(-135deg);
 }
 
-.slick-next {/*次へ矢印の位置と形状*/
+.slick-next {
+    /*次へ矢印の位置と形状*/
     right: -1.5%;
     transform: rotate(45deg);
 }
@@ -488,35 +489,108 @@ input:checked + label > .knob > i:before {
 /*ドットナビゲーションの設定*/
 
 .slick-dots {
-    text-align:center;
-	margin:5px 0 0 0; 
+    text-align: center;
+    margin: 5px 0 0 0;
 }
 
 .slick-dots li {
-    display:inline-block;
-	margin:0 5px;
+    display: inline-block;
+    margin: 0 5px;
 }
 
 .slick-dots button {
-    padding:0;
+    padding: 0;
     color: transparent;
     outline: none;
-    width:8px;/*ドットボタンのサイズ*/
-    height:8px;/*ドットボタンのサイズ*/
-    display:block;
-    border-radius:50%;
-    background:#ccc;/*ドットボタンの色*/
+    width: 8px; /*ドットボタンのサイズ*/
+    height: 8px; /*ドットボタンのサイズ*/
+    display: block;
+    border-radius: 50%;
+    background: #ccc; /*ドットボタンの色*/
     border-style: none;
 }
 
-.slick-dots .slick-active button{
-    background:#e2a2b1;/*ドットボタンの現在地表示の色*/
+.slick-dots .slick-active button {
+    background: #e2a2b1; /*ドットボタンの現在地表示の色*/
 }
 .example-wrap {
-    font-size: 20pt;
+    font-size: 1.5rem;
     padding-top: 15px;
 }
 .menu-area {
     text-align: center;
     font-size: 1.4rem;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+table tr {
+    border-bottom: solid 1px #ddd;
+}
+
+table th {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 7px 0;
+    border-right: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+}
+
+table th:nth-child(1) {
+    background-color: #dddddd;
+}
+
+table th:nth-child(2) {
+    background-color: #f5b932;
+    color: white;
+}
+
+table tr:nth-child(2) td {
+    font-size: 1.5rem;
+}
+
+table th:nth-child(3) {
+    background-color: #f34955;
+    color: white;
+}
+
+table tr:nth-child(3) td {
+    font-size: 1.5rem;
+}
+
+table tr:nth-child(4) td {
+    font-size: 1.5rem;
+}
+
+table td {
+    text-align: center;
+    padding:  1rem 3rem;
+    border-right: solid 1px #ddd;
+    border-left: solid 1px #ddd;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table td.popular {
+    font-weight: bold;
+    color: #f34955;
+}
+
+.fs1 {
+    font-size: 1rem;
+    margin-bottom: 0rem;
+}
+
+.fs12 {
+    font-size: 1.2rem;
+}
+
+.bd {
+    font-weight: bold;
 }

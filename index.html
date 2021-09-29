@@ -13,7 +13,10 @@
         />
         <title>パーソナルカラーAI無料診断</title>
         <meta name="title" content="パーソナルカラーAI無料診断" />
-        <meta name="subject" content="AIによるパーソナルカラー診断, 私のカラーを確認しましょう!" />
+        <meta
+            name="subject"
+            content="AIによるパーソナルカラー無料診断, 私のカラーを確認しましょう!"
+        />
         <meta
             name="keywords"
             content="パーソナルカラーAI無料診断, AIによるパーソナルカラー診断, パーソナルカラー診断, 人工知能によるパーソナルカラー診断, 顔で分かるパーソナルカラー, パーソナルカラー, 顔色, personalcolor, イエベ春, イエベ秋, ブルベ夏, ブルベ冬, イエベー春, イエベー秋, ブルベー夏, ブルベー冬, 사슴상, AI　パーソナルカラー, 人工知能　パーソナルカラー"
@@ -58,7 +61,6 @@
             type="text/css"
             href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
         />
-        <link rel="stylesheet" type="text/css" href="css/6-1-6.css" />
     </head>
 
     <body scrolling="yes">
@@ -102,15 +104,16 @@
             <div class="resizeimage">
                 <img src="img/mainimg.png" />
             </div>
-            <h2 class="subtitle">マイパーソナルカラーを身に着けると</h2>
+            <h2 class="subtitle">PSカラーを身に着けると</h2>
             <h3 class="detailcontent d-flex justify-content-center">
-                童顔に見える<br />小顔に見える<br />
-                髪や瞳がきらきらと<br />
+                童顔に見える<br />
+                小顔に見える<br />
                 シミ、シワが目立たない<br />
+                髪や瞳がきらきらと見える<br />
                 洗練されておしゃれにに見える<br />
                 洋服やメイク用品を選びやすくなる
             </h3>
-            <h2 class="subtitle">マイパーソナルカラーを身に着けないと</h2>
+            <h2 class="subtitle">PSカラーを身に着けないと</h2>
             <h3 class="detailcontent d-flex justify-content-center">
                 老眼に見える<br />
                 お肌が黄黒く見える<br />
@@ -119,6 +122,30 @@
                 赤ら顔になり野暮ったく見える<br />
                 洋服やメイク用品を買って失敗する
             </h3>
+            <table>
+                <tr>
+                    <th class="bd">種類</th>
+                    <th>訪問診断</th>
+                    <th class="popular">
+                        <span class="inner">AI診断</span>
+                    </th>
+                </tr>
+                <tr>
+                    <td>相場</td>
+                    <td>¥14,000<br />～<br />¥20,000</td>
+                    <td class="popular">¥0</td>
+                </tr>
+                <tr>
+                    <td>所要時間</td>
+                    <td>約 2時間</td>
+                    <td class="popular">約 10秒</td>
+                </tr>
+                <tr>
+                    <td>正確度</td>
+                    <td>高</td>
+                    <td class="popular">高</td>
+                </tr>
+            </table>
             <h2 class="sr-only">自分のパーソナルカラーを無料で診断できます。</h2>
             <h3 class="sr-only">
                 韓流スターやKPOPアイドル、国内有名のデータで学習したAIがあなたのパソなるカラーを判断します。
@@ -217,12 +244,14 @@
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+
                 <div id="loading" class="animated bounce">
                     <div class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                    <p class="text-center">AIが分析中。数秒かかります。</p>
+                    <p class="text-center">AIが分析中。</p>
                 </div>
+
                 <p class="result-title"></p>
                 <div id="label-container" class="d-flex flex-column justify-content-around"></div>
                 ※パーソナルカラーは、その日のコンディションによって変わることがあります。
@@ -250,7 +279,7 @@
                 </p>
                 <p class="d-flex justify-content-center">
                     reference from
-                    <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">　JoCoding </a
+                    <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg"> JoCoding </a
                     >、<a href="https://github.com/googlecreativelab/teachablemachine-community"
                         >Teachable Machine<br />
                     </a>
@@ -359,12 +388,18 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     krCeleb,
                     jpCeleb,
                     osCeleb,
-                    hair,
+                    tone,
                     color,
+                    hair,
                     eyebrow,
+                    eyebrowExplain,
                     eyeshadow,
+                    eyeshadowExplain,
                     cheek,
-                    lip;
+                    cheekExplain,
+                    lip,
+                    lipExplain,
+                    accessory;
                 switch (prediction[0].className) {
                     case 'yellowSpring':
                         resultTitle = 'イエベ春';
@@ -391,17 +426,25 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                         jpCeleb =
                             '<strong>日本</strong> : 坂口 健太郎, 千葉 雄大, 中島 健人, 手越 祐也, 櫻井 翔';
                         osCeleb = '';
+                        tone =
+                            '<div class="resizeimage"><img src="img/yellowSpring/pccstone.JPG"><img src="img/yellowSpring/pccstoneExplain.JPG"></div>';
                         color =
                             '<div class="resizeimage"><img src="img/yellowSpring/color.PNG"></div>';
                         hair =
                             '<div class="resizeimage"><img src="img/yellowSpring/hair.PNG"></div>';
                         eyebrow =
                             '<div class="resizeimage"><img src="img/yellowSpring/eyebrow.PNG"></div>';
+                        eyebrowExplain = 'ライトブラウン、ヘーゼルナッツ、ベージュ';
                         eyeshadow =
                             '<div class="resizeimage"><img src="img/yellowSpring/eyeshadow.PNG"></div>';
+                        eyeshadowExplain = 'ライトベージュ、ピーチピンク、ライトオレンジ、ライトターコイズ、ライトブラウン';
                         cheek =
                             '<div class="resizeimage"><img src="img/yellowSpring/cheek.PNG"></div>';
+                        cheekExplain = 'コーラル、オレンジ、クリアピーチ';
                         lip = '<div class="resizeimage"><img src="img/yellowSpring/lip.JPG"></div>';
+                        lipExplain =
+                            'ピンクベージュ、コーラル、ヌードベージュ、オレンジ、サルモンピンク、クリムゾンレッド';
+                        accessory = 'ゴールド、ブロンズ、ナチュラル真珠';
                         break;
                     case 'yellowAutumn':
                         resultTitle = 'イエベ秋';
@@ -422,17 +465,24 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                             osCeleb =
                                 '<strong>海外</strong> : ジェシカ・アルバ, ドリュー・バリモア, ナタリー・ポートマン, ケンダル・ジェンナー';
                         }
+                        tone =
+                            '<div class="resizeimage"><img src="img/yellowAutumn/pccstone.JPG"><img src="img/yellowAutumn/pccstoneExplain.JPG"></div>';
                         color =
                             '<div class="resizeimage"><img src="img/yellowAutumn/color.PNG"></div>';
                         hair =
                             '<div class="resizeimage"><img src="img/yellowAutumn/hair.PNG"></div>';
                         eyebrow =
                             '<div class="resizeimage"><img src="img/yellowAutumn/eyebrow.PNG"></div>';
+                        eyebrowExplain = 'ダークブラウン、アース、アッシュグレー';
                         eyeshadow =
                             '<div class="resizeimage"><img src="img/yellowAutumn/eyeshadow.PNG"></div>';
+                        eyeshadowExplain = 'イエロー、ゴールド、カーキ、テラコッタ';
                         cheek =
                             '<div class="resizeimage"><img src="img/yellowAutumn/cheek.PNG"></div>';
+                        cheekExplain = 'インディピンク、テラコッタ、オレンジ';
                         lip = '<div class="resizeimage"><img src="img/yellowAutumn/lip.JPG"></div>';
+                        lipExplain = 'MLBB、ドライローズ、トマト、オレンジレッド、ブラウンレッド';
+                        accessory = 'ゴールド、ブロンズ、ナチュラル真珠';
                         break;
                     case 'blueSummer':
                         resultTitle = 'ブルベ夏';
@@ -454,16 +504,23 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                             osCeleb =
                                 '<strong>海外</strong> : リアーナ, グウィネス・パルトロー, キャサリン妃, マイリー・サイラス';
                         }
+                        tone =
+                            '<div class="resizeimage"><img src="img/blueSummer/pccstone.JPG"><img src="img/blueSummer/pccstoneExplain.JPG"></div>';
                         color =
                             '<div class="resizeimage"><img src="img/blueSummer/color.PNG"></div>';
                         hair = '<div class="resizeimage"><img src="img/blueSummer/hair.PNG"></div>';
                         eyebrow =
                             '<div class="resizeimage"><img src="img/blueSummer/eyebrow.PNG"></div>';
+                        eyebrowExplain = 'グレー、アッシュブラウン、ピンクブラウン';
                         eyeshadow =
                             '<div class="resizeimage"><img src="img/blueSummer/eyeshadow.PNG"></div>';
+                        eyeshadowExplain = 'グレー、ピンク、シルバーパール';
                         cheek =
                             '<div class="resizeimage"><img src="img/blueSummer/cheek.PNG"></div>';
+                        cheekExplain = '水色ピンク、ラベンダー';
                         lip = '<div class="resizeimage"><img src="img/blueSummer/lip.JPG"></div>';
+                        lipExplain = 'ベイビーピンク、ローズピンク、フーシャ、ラズベリー';
+                        accessory = 'シルバー、ホワイトゴールド、ダイヤモンド、白真珠';
                         break;
                     case 'blueWinter':
                         resultTitle = 'ブルベ冬';
@@ -485,16 +542,23 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                             osCeleb =
                                 '<strong>海外</strong> : アン・ハサウエイ, ケイティ・ペリー, ファン・ビンビン';
                         }
+                        tone =
+                            '<div class="resizeimage"><img src="img/blueWinter/pccstone.JPG"><img src="img/blueWinter/pccstoneExplain.JPG"></div>';
                         color =
                             '<div class="resizeimage"><img src="img/blueWinter/color.PNG"></div>';
                         hair = '<div class="resizeimage"><img src="img/blueWinter/hair.PNG"></div>';
                         eyebrow =
                             '<div class="resizeimage"><img src="img/blueWinter/eyebrow.PNG"></div>';
+                        eyebrowExplain = 'ビビッド、グレー';
                         eyeshadow =
                             '<div class="resizeimage"><img src="img/blueWinter/eyeshadow.PNG"></div>';
+                        eyeshadowExplain = 'ワインレッド、マゼンタ、チョコレート';
                         cheek =
                             '<div class="resizeimage"><img src="img/blueWinter/cheek.PNG"></div>';
+                        cheekExplain = '青色ピンク';
                         lip = '<div class="resizeimage"><img src="img/blueWinter/lip.JPG"></div>';
+                        lipExplain = 'ブルゴーニュ、パープル、ディープローズ、プラム、チェリー';
+                        accessory = 'シルバー、ホワイトゴールド、ダイヤモンド、白真珠';
                         break;
                 }
                 var title =
@@ -540,11 +604,19 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     celeb +
                     '</div>';
 
+                var tonetitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-20'>" +
+                    'ーーーおすすめのメイクーーー<br>' +
+                    'PCCSトーン' +
+                    tone +
+                    '</div>';
+
                 var colortitle =
                     "<div class='" +
                     prediction[0].className +
                     "-ai-title margin-bottom-20'>" +
-                    'ーーーーおすすめのメイクーーーー<br>' +
                     'Color' +
                     color +
                     '</div>';
@@ -562,6 +634,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     prediction[0].className +
                     "-ai-title margin-bottom-20'>" +
                     'Eyebrow' +
+                    "<div class='result-celeb-explain pt-2 fs12'>" +
+                    eyebrowExplain +
+                    '</div>' +
                     eyebrow +
                     '</div>';
 
@@ -570,6 +645,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     prediction[0].className +
                     "-ai-title margin-bottom-20'>" +
                     'Eye shadow' +
+                    "<div class='result-celeb-explain pt-2 fs12'>" +
+                    eyeshadowExplain +
+                    '</div>'+
                     eyeshadow +
                     '</div>';
 
@@ -578,6 +656,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     prediction[0].className +
                     "-ai-title margin-bottom-20'>" +
                     'Cheek' +
+                    "<div class='result-celeb-explain pt-2 fs12'>" +
+                    cheekExplain +
+                    '</div>' +
                     cheek +
                     '</div>';
 
@@ -586,13 +667,34 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     prediction[0].className +
                     "-ai-title margin-bottom-20'>" +
                     'Lip' +
+                    "<div class='result-celeb-explain pt-2 fs12'>" +
+                    lipExplain +
+                    '</div>' +
                     lip +
+                    '</div>';
+
+                var accessory =
+                    "<div class='result-celeb-explain pt-2 fs12'>" + accessory + '</div>';
+
+                var accessorytitle =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-ai-title margin-bottom-20'>" +
+                    'Accessory' +
+                    accessory +
                     '</div>';
 
                 $('.result-title').html(title);
                 $('.result-message').html(keywordtitle + featuretitle + celebtitle);
                 $('.result-make-message').html(
-                    colortitle + hairtitle + eyebrowtitle + eyeshadowtitle + cheektitle + liptitle
+                    tonetitle +
+                        colortitle +
+                        hairtitle +
+                        eyebrowtitle +
+                        eyeshadowtitle +
+                        cheektitle +
+                        liptitle +
+                        accessorytitle
                 );
 
                 var barWidth;
