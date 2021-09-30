@@ -1,6 +1,6 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.42857143;
     color: #333;
     background-color: #fff;
@@ -133,7 +133,7 @@ body {
 }
 
 .section {
-    margin-top: 50px;
+    margin-top: 3rem;
 }
 
 .title {
@@ -148,11 +148,13 @@ body {
     line-height: 1.53;
     text-align: center;
     color: #ff6347;
+    margin-bottom: 0.1rem;
 }
 
 .detailcontent {
     color: #35465d;
     font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
@@ -442,6 +444,7 @@ input:checked + label > .knob > i:before {
     /*横幅94%で左右に余白を持たせて中央寄せ*/
     width: 94%;
     margin: 0 auto;
+    padding-inline-start: 0rem;
 }
 
 .slider img {
@@ -449,14 +452,10 @@ input:checked + label > .knob > i:before {
     height: auto;
 }
 
-.slider ul {
-    padding-inline-start: 0px;
-}
-
 /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
 
 .slider .slick-slide {
-    margin: 0 10px;
+    margin: 0 1.3rem;
 }
 
 /*矢印の設定*/
@@ -491,6 +490,7 @@ input:checked + label > .knob > i:before {
 .slick-dots {
     text-align: center;
     margin: 5px 0 0 0;
+    padding-inline-start: 0rem;
 }
 
 .slick-dots li {
@@ -519,7 +519,7 @@ input:checked + label > .knob > i:before {
 }
 .menu-area {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
 }
 table {
     border-collapse: collapse;
