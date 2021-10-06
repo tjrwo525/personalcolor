@@ -137,7 +137,7 @@ body {
 }
 
 .title {
-    line-height: 1;
+    line-height: 2;
     text-align: center;
     color: #eb5757;
     font-size: 2.7rem;
@@ -292,28 +292,28 @@ body {
     font-size: 1.5rem;
     color: #35465d;
 }
-.blueSummer-ai-title {
+.blueSummer-color {
     color: #548dd4;
 }
 .blueSummer-ai-celeb {
     color: #548dd4;
     font-size: 1.2rem;
 }
-.yellowSpring-ai-title {
+.yellowSpring-color {
     color: #e56995;
 }
 .yellowSpring-ai-celeb {
     color: #e56995;
     font-size: 1.2rem;
 }
-.yellowAutumn-ai-title {
+.yellowAutumn-color {
     color: #ff6c0a;
 }
 .yellowAutumn-ai-celeb {
     color: #ff6c0a;
     font-size: 1.2rem;
 }
-.blueWinter-ai-title {
+.blueWinter-color {
     color: #31849b;
 }
 .blueWinter-ai-celeb {
@@ -552,7 +552,7 @@ table th:nth-child(2) {
 }
 
 table tr:nth-child(2) td {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 table th:nth-child(3) {
@@ -569,8 +569,6 @@ table tr:nth-child(4) td {
 }
 
 table td {
-    text-align: center;
-    padding:  1rem 3rem;
     border-right: solid 1px #ddd;
     border-left: solid 1px #ddd;
     margin-left: auto;
